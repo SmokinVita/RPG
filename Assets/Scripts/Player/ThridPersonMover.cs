@@ -7,6 +7,7 @@ public class ThridPersonMover : MonoBehaviour
     [SerializeField] private float _turnSpeed = 1000f;
 
     private Rigidbody _rb;
+    private Animator _anim;
     private float _moveSpeed = 5f;
 
     // Start is called before the first frame update
@@ -17,6 +18,10 @@ public class ThridPersonMover : MonoBehaviour
         {
             Debug.LogError("Rigidbody is NULL!");
         }
+
+        _anim = GetComponent<Animator>();
+        if (_anim == null)
+            Debug.LogError("Animator is NULL!");
     }
 
     // Update is called once per frame
@@ -31,10 +36,17 @@ public class ThridPersonMover : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            vertical *= 2f;
+        }
+
         var velocity = new Vector3(horizontal, 0, vertical);
         velocity *= _moveSpeed * Time.fixedDeltaTime;
         Vector3 offset = transform.rotation * velocity;
         _rb.MovePosition(transform.position + offset);
+
+        _anim.SetFloat("Speed", vertical, .1f, Time.deltaTime);
 
     }
 }
