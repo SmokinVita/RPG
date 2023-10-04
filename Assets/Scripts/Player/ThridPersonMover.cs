@@ -46,7 +46,8 @@ public class ThridPersonMover : MonoBehaviour
         Vector3 offset = transform.rotation * velocity;
         _rb.MovePosition(transform.position + offset);
 
-        _anim.SetFloat("Speed", vertical, .1f, Time.deltaTime);
+        _anim.SetFloat("Vertical", vertical, .1f, Time.deltaTime);
+        _anim.SetFloat("Horizontal", horizontal, .1f, Time.deltaTime);
 
     }
 }

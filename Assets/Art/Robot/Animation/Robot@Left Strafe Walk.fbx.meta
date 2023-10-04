@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9741e99ee738e104da0b1e5cf5d9fec0
+guid: b21bbbdf9fdd83646aefe0968359f5c2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Standing Walk Back
+      name: Left Strafe Walk
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
